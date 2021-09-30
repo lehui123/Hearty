@@ -21,12 +21,13 @@ const HomeNavigator = () => (
       tabBarActiveTintColor: Colour.primary,
       tabBarInactiveBackgroundColor: Colour.tertiary,
       tabBarInactiveTintColor: Colour.primary,}}>
+    
     <Tab.Screen
-      name="Profile"
-      component={Profile}
+      name="Home"
+      component={Home}
       options={{
         tabBarIcon: ({color, focused }) => (
-          <MaterialCommunityIcons name="account" color={color} focused = {focused} size={25} />
+          <MaterialCommunityIcons name="home" color={color} focused = {focused} size={25} />
         )
       }}
     />
@@ -39,12 +40,12 @@ const HomeNavigator = () => (
         )
       }}
     />
-        <Tab.Screen
-      name="Home"
-      component={Home}
+    <Tab.Screen
+      name="Profile"
+      component={Profile}
       options={{
         tabBarIcon: ({color, focused }) => (
-          <MaterialCommunityIcons name="home" color={color} focused = {focused} size={25} />
+          <MaterialCommunityIcons name="account" color={color} focused = {focused} size={25} />
         )
       }}
     />

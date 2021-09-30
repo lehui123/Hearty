@@ -1,18 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Login from './screens/Login/Login'
-import Signup from './screens/Signup/Signup'
-import Welcome from './screens/Welcome/Welcome'
-import Profile from './screens/Profile/Profile';
-import Measure from './screens/Measure/Measure';
-import InfoPage from './screens/InfoPage/InfoPage';
-import Home from './screens/Home/Home';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-
-
+import { NavigationContainer } from '@react-navigation/native';
+import HomeNavigator from "./navigation/HomeNavigator"
 // const Stack = createNativeStackNavigator();
 // const StackNavigator = () => (
 
@@ -65,7 +54,8 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 // )
 export default function App() {
   return (
-    <Login/>
-  )
+    <NavigationContainer>
+      <HomeNavigator />
+    </NavigationContainer>
+  );
 }
-

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import * as Yup from 'yup';
-import {View,Image, Text} from 'react-native';
+import {View,Image, Text,TouchableOpacity} from 'react-native';
 
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 

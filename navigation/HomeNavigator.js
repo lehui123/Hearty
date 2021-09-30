@@ -5,12 +5,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Measure from "../screens/Measure/Measure";
+import Login from "../screens/Login/Login";
+import Signup from "../screens/Signup/Signup";
+import Welcome from "../screens/Welcome/Welcome";
 import Profile from "../screens/Profile/Profile";
 import InfoPage from "../screens/InfoPage/InfoPage";
 import Colour from "../components/Colour";
 import Home from "../screens/Home/Home"
-import { ImageBackgroundBase } from "react-native";
-import { ColorAndroid } from "react-native/Libraries/StyleSheet/PlatformColorValueTypesAndroid";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +21,8 @@ const HomeNavigator = () => (
       tabBarActiveBackgroundColor: Colour.brand,
       tabBarActiveTintColor: Colour.primary,
       tabBarInactiveBackgroundColor: Colour.tertiary,
-      tabBarInactiveTintColor: Colour.primary,}}>
+      tabBarInactiveTintColor: Colour.primary,
+      headerShown: false}}>
     
     <Tab.Screen
       name="Home"

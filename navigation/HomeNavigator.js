@@ -7,7 +7,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Measure from "../screens/Measure/Measure";
 import Profile from "../screens/Profile/Profile";
 import InfoPage from "../screens/InfoPage/InfoPage";
-import Colour from "../components/Colour"
+import Colour from "../components/Colour";
+import Home from "../screens/Home/Home"
 import { ImageBackgroundBase } from "react-native";
 import { ColorAndroid } from "react-native/Libraries/StyleSheet/PlatformColorValueTypesAndroid";
 
@@ -29,12 +30,21 @@ const HomeNavigator = () => (
         )
       }}
     />
-        <Tab.Screen
+    <Tab.Screen
       name="Measure"
       component={Measure}
       options={{
         tabBarIcon: ({color, focused }) => (
           <MaterialCommunityIcons name="pulse" color={color} focused = {focused} size={25} />
+        )
+      }}
+    />
+        <Tab.Screen
+      name="Home"
+      component={Home}
+      options={{
+        tabBarIcon: ({color, focused }) => (
+          <MaterialCommunityIcons name="home" color={color} focused = {focused} size={25} />
         )
       }}
     />

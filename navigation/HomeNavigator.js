@@ -1,5 +1,6 @@
 
 import React from "react";
+import {View} from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -7,6 +8,8 @@ import Measure from "../screens/Measure/Measure";
 import Profile from "../screens/Profile/Profile";
 import InfoPage from "../screens/InfoPage/InfoPage";
 import Colour from "../components/Colour"
+import { ImageBackgroundBase } from "react-native";
+import { ColorAndroid } from "react-native/Libraries/StyleSheet/PlatformColorValueTypesAndroid";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,6 +48,7 @@ const HomeNavigator = () => (
       }}
     />
   </Tab.Navigator>
+
 );
 
 export default HomeNavigator;

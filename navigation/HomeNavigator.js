@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import MeasureNavigator from "./MeasureNavigator";
 import Measure from "../screens/Measure/Measure";
 import Login from "../screens/Login/Login";
 import Signup from "../screens/Signup/Signup";
@@ -35,7 +36,7 @@ const HomeNavigator = () => (
     />
     <Tab.Screen
       name="Measure"
-      component={Measure}
+      component={MeasureNavigator}
       options={{
         tabBarIcon: ({color, focused }) => (
           <MaterialCommunityIcons name="pulse" color={color} focused = {focused} size={25} />

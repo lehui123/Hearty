@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import * as Yup from 'yup';
 import {View, Image, Text,TouchableOpacity} from 'react-native';
-
+import routes from '../../navigation/routes';
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 
 const validationSchema = Yup.object().shape({
@@ -48,7 +48,7 @@ function Login({navigation}) {
 
                     <View style={styles.ExtraView}>
                         <Text style={styles.ExtraText}>Don't have an account?</Text>
-                        <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate('Signup')}>
+                        <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate(routes.SIGNUP)}>
                             <Text style={styles.TextLinkContent}> Signup</Text>
                         </TouchableOpacity>
                     </View>

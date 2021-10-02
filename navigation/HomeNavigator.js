@@ -1,13 +1,10 @@
 
 import React from "react";
-import {View} from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import MeasureNavigator from "./MeasureNavigator";
 import Measure from "../screens/Measure/Measure";
-import Login from "../screens/Login/Login";
-import Signup from "../screens/Signup/Signup";
 import Welcome from "../screens/Welcome/Welcome";
 import Profile from "../screens/Profile/Profile";
 import InfoPage from "../screens/InfoPage/InfoPage";

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import * as Yup from 'yup';
-import {View,Image, Text,TouchableOpacity} from 'react-native';
+import {View, Image, Text,TouchableOpacity} from 'react-native';
 
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 
@@ -10,9 +10,10 @@ const validationSchema = Yup.object().shape({
     password: Yup.string().required().min(4).label("Password")
 })
 
-function Login(props) {
+function Login({navigation}) {
+    const signIn = () => {};
     return (
-        <View style={styles.StyledContainer}>
+        <View  style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 
                 <Image style={styles.PageLogo} source = {require('../../assets/icon.png')}/> 
                 <Text style={styles.PageTitle}> Welcome to HEARTY </Text>
@@ -43,11 +44,11 @@ function Login(props) {
                     textContentType="password"
                     />
                 
-                    <SubmitButton title="Login"/>
+                    <SubmitButton title="Login" onPress={signIn}/>
 
                     <View style={styles.ExtraView}>
                         <Text style={styles.ExtraText}>Don't have an account?</Text>
-                        <TouchableOpacity style={styles.TextLink}>
+                        <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate('Signup')}>
                             <Text style={styles.TextLinkContent}> Signup</Text>
                         </TouchableOpacity>
                     </View>

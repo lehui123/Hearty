@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         top: 10,
     },
     PageTitle: {
-        fontSize:30,
+        fontSize:25,
         textAlign: 'center',
         fontWeight: 'bold',
         color: Colour.brand,

@@ -3,15 +3,18 @@ import Colour from '../../components/Colour'
 import Constants from "expo-constants";
 const styles = StyleSheet.create({
     StyledContainer:{
-      flex:1,
-      padding: 20,
-      paddingTop: Constants.statusBarHeight,
-      backgroundColor: Colour.primary,
+        flex:1,
+        padding: 20,
+        paddingTop: Constants.statusBarHeight+20,
+        backgroundColor: Colour.primary,
+
     },
     InnerContainer:{
         flex:1,
         width:'100%',
         alignItems: 'center',
+        paddingTop: 20,
+
     },
     PageTitle: {
         fontSize:30,

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import * as Yup from 'yup';
 import {View,TouchableOpacity, Text} from 'react-native';
-
+import routes from '../../navigation/routes';
 import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
 
 const validationSchema = Yup.object().shape({
@@ -11,7 +11,8 @@ const validationSchema = Yup.object().shape({
     password: Yup.string().required().min(4).label("Password")
 })
 
-function Signup(props) {
+function Signup({navigation}) {
+    const register = () => {};
     return (
         <View style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 
@@ -48,11 +49,11 @@ function Signup(props) {
                 textContentType="password"
                 />
             
-                <SubmitButton title="Register"/>
+                <SubmitButton title="Register" onPress ={register}/>
 
                 <View style={styles.ExtraView}>
                     <Text style={styles.ExtraText}>Already registered an account?</Text>
-                    <TouchableOpacity style={styles.TextLink}>
+                    <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate(routes.LOGIN)}>
                         <Text style={styles.TextLinkContent}> Login</Text>
                     </TouchableOpacity>
                 </View>

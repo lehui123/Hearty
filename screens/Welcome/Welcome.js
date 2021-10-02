@@ -9,6 +9,8 @@ function Welcome({navigation}) {
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("../../assets/icon.png")} />
             <Text style={styles.tagline}>Monitor your Heart Rate!</Text>
+            <Image style={styles.imageSize} source = {require('../../assets/hearty.png')}/>
+            <Text style={styles.maintext}>HEARTY mobile application connects to HEARTY pulse sensor to detect and record your heart rate!</Text>
         </View>
         <View style={styles.buttonsContainer}>
           <AppButton title="Login" onPress={()=> navigation.navigate(routes.LOGIN)} />

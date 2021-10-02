@@ -3,6 +3,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import LoginNavigator from "./LoginNavigator";
 import MeasureNavigator from "./MeasureNavigator";
 import Measure from "../screens/Measure/Measure";
 import Welcome from "../screens/Welcome/Welcome";
@@ -55,6 +56,15 @@ const HomeNavigator = () => (
       options={{
         tabBarIcon: ({ color, focused }) => (
           <MaterialCommunityIcons name="information-outline" color={color} focused={focused} size={25} />
+        ),
+      }}
+    />
+        <Tab.Screen
+      name="Logout"
+      component={LoginNavigator}
+      options={{
+        tabBarIcon: ({ color, focused }) => (
+          <MaterialCommunityIcons name="logout" color={color} focused={focused} size={25} />
         ),
       }}
     />

@@ -12,7 +12,9 @@ const validationSchema = Yup.object().shape({
 })
 
 function Signup({navigation}) {
-    const register = () => {};
+    const register = () => {
+        
+    };
     return (
         <View style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 

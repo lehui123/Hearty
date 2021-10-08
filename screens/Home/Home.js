@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-export default function Home() {
+const value =  20;
+export default function Home() { 
     return (
         <View>
-            <Text>This is the home page</Text>
+            <Text>{value}</Text>
         </View>
     );
 }

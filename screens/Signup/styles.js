@@ -5,19 +5,21 @@ const styles = StyleSheet.create({
     StyledContainer:{
         flex:1,
         padding: 20,
-        paddingTop: Constants.statusBarHeight+20,
+        paddingTop: Constants.statusBarHeight,
         backgroundColor: Colour.primary,
-
     },
     InnerContainer:{
         flex:1,
         width:'100%',
         alignItems: 'center',
-        paddingTop: 20,
-
+    },
+    PageLogo:{
+        width: 200,
+        height: 200,
+        top: 10,
     },
     PageTitle: {
-        fontSize:30,
+        fontSize:25,
         textAlign: 'center',
         fontWeight: 'bold',
         color: Colour.brand,
@@ -49,6 +51,23 @@ const styles = StyleSheet.create({
     TextLinkContent:{
         color: Colour.brand,
         fontSize: 15,
-    }
+    },
+    Container: {
+        backgroundColor:Colour.secondary,
+        borderRadius: 25,
+        flexDirection: "row",
+        width: "100%",
+        padding: 15,
+        marginVertical: 10,
+    },
+    Icon:{
+        marginRight: 10,
+    },
+    InputText:{
+        flex: 1,
+        color: Colour.tertiary,
+        fontSize: 18
+    },
+    
 })
 export default styles

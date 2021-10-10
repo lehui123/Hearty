@@ -59,7 +59,7 @@ const HomeNavigator = () => (
         ),
       }}
     />
-        <Tab.Screen
+    {/* <Tab.Screen
       name="Logout"
       component={LoginNavigator}
       options={{
@@ -67,7 +67,7 @@ const HomeNavigator = () => (
           <MaterialCommunityIcons name="logout" color={color} focused={focused} size={25} />
         ),
       }}
-    />
+    /> */}
   </Tab.Navigator>
 
 );

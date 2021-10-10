@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import { auth } from '../../firebase';
 
-const value =  20;
 export default function Home() { 
     return (
         <View>
-            <Text>{value}</Text>
+            <Text>Welcome {auth?.currentUser?.displayName}</Text>
         </View>
     );
 }

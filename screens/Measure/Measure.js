@@ -1,30 +1,32 @@
 import React from 'react';
-import {SafeAreaView, Text, Button} from 'react-native';
+import {SafeAreaView, Text,TouchableOpacity,View} from 'react-native';
 import Colour from '../../components/Colour';
 import styles from './styles';
-import AppButton from '../../components/AppButton';
 const realtimeBPMvalue = 180
 export default function Measure ({navigation}) {
     return (
         <SafeAreaView style = {styles.styleContainer}>
-            <SafeAreaView style = {styles.innerContainer}>
+            <View style = {styles.innerContainer}>
             <Text style = {styles.header}>Status: Connected </Text> 
-            <Button
-                title = "Disconnect" 
-                onPress={() => console.log("Button tapped")} 
-                />
-             </SafeAreaView>
-             <SafeAreaView style = {styles.innerContainer}>
+            </View>
+            <TouchableOpacity
+                style={styles.disconnectButton}
+                onPress={() => console.log('Button tapped')}
+                >
+                <Text style={styles.disconnectText}>Disconnect</Text>
+            </TouchableOpacity>
+            <View style = {styles.innerContainer}>
             <Text style = {styles.body}>BPM</Text>
-            </SafeAreaView>
-            <SafeAreaView style = {styles.circle}>
-            <Text style = {styles.header}> {realtimeBPMvalue} </Text>
-            <Button 
-                title = "Start" 
-                onPress={() => console.log("Button tapped")} 
-                />
-            </SafeAreaView>
-            <AppButton onPress={() =>navigation.navigate('History')} title = "History"/>
+            </View>
+            <View style = {styles.circle}>
+            <Text style = {styles.boxHeader}> {realtimeBPMvalue} </Text>
+            </View>
+            <TouchableOpacity
+                style={styles.disconnectButton}
+                onPress={() => console.log('Button tapped')}
+                >
+                <Text style={styles.disconnectText}>Start</Text>
+            </TouchableOpacity>
         </SafeAreaView>
                 
     );

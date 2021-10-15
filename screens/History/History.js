@@ -6,7 +6,7 @@ export default function History({navigation}) {
         <View>
             <Text>This is the history page</Text>
             <Text>This page shows the history of bpm </Text>
-            <AppButton onPress={() =>navigation.navigate('Measure')} title = "Measure"/>
+            <AppButton onPress={() =>navigation.navigate('Profile')} title = "Profile"/>
         </View>
     );
 }

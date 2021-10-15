@@ -2,42 +2,44 @@
 //import { CurrentRenderContext } from '@react-navigation/core'
 import { StyleSheet, StatusBar, Platform } from 'react-native'
 import Colour from '../../components/Colour'
-
+import Constants from "expo-constants";
 const styles = StyleSheet.create({
     background: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        paddingTop: Constants.statusBarHeight,
         backgroundColor: Colour.primary
     },
     header: {
         fontSize: 40,
+        textAlign: 'center',
         marginBottom: 20,
         letterSpacing: 1,
         fontWeight: 'bold',
-        justifyContent: 'center',
-        alignItems: 'center',
+        color: Colour.brand
+    },  
+    boxheader: {
+        fontSize: 40,
         textAlign: 'center',
+        letterSpacing: 1,
+        fontWeight: 'bold',
         color: Colour.brand
     },        
     box: {
         fontSize: 25,
         marginBottom: 20,
         letterSpacing: 1,
-        //justfyContent: 'center',
-        //alignItems: 'center',
-        //textAlign: 'center'
+        textAlign: 'center',
+        color: Colour.tertiary
     },
     container: {
-        flex: 1,
         flexDirection: 'row',
-        justfyContent: 'center',
+        justifyContent: 'center',
         alignItems: 'center',
-        textAlign: 'center',
         //padding: 15,
-        height: 100,
-        width: 200,
+        height: '20%',
+        width: '25%',
         marginBottom: 20,
         backgroundColor: Colour.secondary
     },

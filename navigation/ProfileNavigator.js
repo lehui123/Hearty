@@ -1,19 +1,21 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Measure from "../screens/Measure/Measure";
+import Profile from "../screens/Profile/Profile";
 import History from "../screens/History/History";
+import LoginNavigator from "./LoginNavigator";
 const Stack = createNativeStackNavigator();
-const MeasureNavigator = () => (
+const ProfileNavigator = () => (
 
   <Stack.Navigator
     initialRouteName = 'Welcome'
     screenOptions={{
       headerShown: false,
     }}>
-    <Stack.Screen name='Measure' component = {Measure}/>
+    <Stack.Screen name='Profile' component = {Profile}/>
     <Stack.Screen name='History' component = {History}/>
+    <Stack.Screen name='LoginNavi' component = {LoginNavigator}/>
   </Stack.Navigator>
 
 );
 
-export default MeasureNavigator;
+export default ProfileNavigator;

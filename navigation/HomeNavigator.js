@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import LoginNavigator from "./LoginNavigator";
-import MeasureNavigator from "./MeasureNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 import Measure from "../screens/Measure/Measure";
 import Welcome from "../screens/Welcome/Welcome";
 import Profile from "../screens/Profile/Profile";
@@ -34,7 +34,7 @@ const HomeNavigator = () => (
     />
     <Tab.Screen
       name="Measure"
-      component={MeasureNavigator}
+      component={Measure}
       options={{
         tabBarIcon: ({color, focused }) => (
           <MaterialCommunityIcons name="pulse" color={color} focused = {focused} size={25} />
@@ -43,7 +43,7 @@ const HomeNavigator = () => (
     />
     <Tab.Screen
       name="Profile"
-      component={Profile}
+      component={ProfileNavigator}
       options={{
         tabBarIcon: ({color, focused }) => (
           <MaterialCommunityIcons name="account" color={color} focused = {focused} size={25} />

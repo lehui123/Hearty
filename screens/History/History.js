@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-
-export default function History() {
+import AppButton from '../../components/AppButton';
+export default function History({navigation}) {
     return (
         <View>
             <Text>This is the history page</Text>
             <Text>This page shows the history of bpm </Text>
+            <AppButton onPress={() =>navigation.navigate('Measure')} title = "Measure"/>
         </View>
     );
 }

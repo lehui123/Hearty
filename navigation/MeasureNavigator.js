@@ -1,44 +1,19 @@
-
 import React from "react";
-import {View} from 'react-native';
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Measure from "../screens/Measure/Measure";
 import History from "../screens/History/History";
-import Colour from "../components/Colour";
-
-const Tab = createBottomTabNavigator();
-
-
+const Stack = createNativeStackNavigator();
 const MeasureNavigator = () => (
-    <Tab.Navigator
-      screenOptions={{
-      tabBarActiveBackgroundColor: Colour.brand,
-      tabBarActiveTintColor: Colour.primary,
-      tabBarInactiveBackgroundColor: Colour.tertiary,
-      tabBarInactiveTintColor: Colour.primary,
-      headerShown: false}}>
-    
-    <Tab.Screen
-      name="Measure"
-      component={Measure}
-      options={{
-        tabBarIcon: ({color, focused }) => (
-          <MaterialCommunityIcons name="pulse" color={color} focused = {focused} size={25} />
-        )
-      }}
-    />
-    <Tab.Screen
-      name="History"
-      component={History}
-      options={{
-        tabBarIcon: ({color, focused }) => (
-          <MaterialCommunityIcons name="history" color={color} focused = {focused} size={25} />
-        )
-      }}
-    />
-    </Tab.Navigator>
+
+  <Stack.Navigator
+    initialRouteName = 'Welcome'
+    screenOptions={{
+      headerShown: false,
+    }}>
+    <Stack.Screen name='Measure' component = {Measure}/>
+    <Stack.Screen name='History' component = {History}/>
+  </Stack.Navigator>
+
 );
 
 export default MeasureNavigator;

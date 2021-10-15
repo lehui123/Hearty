@@ -12,7 +12,7 @@ function Login({navigation}) {
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
             console.log(authUser);
             if(authUser) {
-                navigation.replace('Home');  
+                navigation.replace('HomeNavi');  
             } 
         });
 
@@ -26,7 +26,7 @@ function Login({navigation}) {
         auth
         .signInWithEmailAndPassword(email,password)
         .then((res)=> {
-            navigation.navigate('HomeNavigator');
+            navigation.navigate('HomeNavi');
         })
         .catch((error) => alert(error.message));   
     };

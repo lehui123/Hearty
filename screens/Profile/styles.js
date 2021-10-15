@@ -1,7 +1,6 @@
 import { StyleSheet, StatusBar, Platform } from 'react-native'
 import Colour from '../../components/Colour'
 import Constants from "expo-constants";
-
 const styles = StyleSheet.create({
     styleContainer: {
         flex: 1,

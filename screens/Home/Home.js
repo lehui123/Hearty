@@ -1,10 +1,20 @@
-import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import React, {useState} from 'react';
 import {SafeAreaView, Text} from 'react-native';
+import { auth } from '../../config';
+import AppButton from '../../components/AppButton';
 import styles from './styles';
-
-const lastBPMvalue = 10
-const BPMstatus = 20
-function Home(props) {
+export default function Home({navigation}) { 
+    const Logout = () => {
+        auth
+        .signOut()
+        .then(()=>{
+        navigation.navigate('Login');
+        })
+        .catch((error) => alert(error.message));  
+    }
+    const lastBPMvalue = 10
+    const BPMstatus = 20
     return (
         <SafeAreaView style = {styles.background}>
             <SafeAreaView style = {styles.header}>
@@ -22,7 +32,9 @@ function Home(props) {
             <SafeAreaView style = {styles.container}>
             <Text style = {styles.header}> {BPMstatus} </Text>
             </SafeAreaView>
+            <AppButton onPress={Logout} title = "Log out"/>
         </SafeAreaView>
+            
+
     );
 }
-export default Home;

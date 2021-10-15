@@ -2,9 +2,9 @@ import React from 'react';
 import {SafeAreaView, Text, Button} from 'react-native';
 import Colour from '../../components/Colour';
 import styles from './styles';
-
+import AppButton from '../../components/AppButton';
 const realtimeBPMvalue = 180
-function Measure (pros) {
+export default function Measure ({navigation}) {
     return (
         <SafeAreaView style = {styles.styleContainer}>
             <SafeAreaView style = {styles.innerContainer}>
@@ -24,10 +24,9 @@ function Measure (pros) {
                 onPress={() => console.log("Button tapped")} 
                 />
             </SafeAreaView>
-
+            <AppButton onPress={() =>navigation.navigate('History')} title = "History"/>
         </SafeAreaView>
                 
     );
 }
 
-export default Measure;

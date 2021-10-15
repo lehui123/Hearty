@@ -1,3 +1,4 @@
+
 //import { CurrentRenderContext } from '@react-navigation/core'
 import { StyleSheet, StatusBar, Platform } from 'react-native'
 import Colour from '../../components/Colour'

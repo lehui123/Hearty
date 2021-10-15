@@ -29,7 +29,7 @@ function Signup({navigation}) {
                 uuid: auth.currentUser.uid,
             },
         });
-        navigation.navigate('Home');
+        navigation.navigate('HomeNavi');
         })
         .catch((error) => alert(error.message));   
     };

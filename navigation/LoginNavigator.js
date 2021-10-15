@@ -15,7 +15,7 @@ const LoginNavigator = () => (
     <Stack.Screen name='Welcome' component = {Welcome}/>
     <Stack.Screen name='Login' component = {Login}/>
     <Stack.Screen name='Signup' component = {Signup}/>
-    <Stack.Screen name='Home' component = {HomeNavigator}/>
+    <Stack.Screen name='HomeNavi' component = {HomeNavigator}/>
   </Stack.Navigator>
 
 );

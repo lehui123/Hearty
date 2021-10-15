@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './styles';
 import {View,TouchableOpacity, Text,KeyboardAvoidingView, TextInput} from 'react-native';
 import routes from '../../navigation/routes';
-import { auth } from '../../firebase';
+import { auth, db } from '../../config';
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -14,10 +14,22 @@ function Signup({navigation}) {
     const register = () => {
         auth
         .createUserWithEmailAndPassword(email,password)
-        .then((authUser) => {
-            authUser.user.updateProfile({
-                displayName: name,
+        .then((res) => {
+        if (res.user) {
+            res.user.updateProfile({
+                displayName: name
             })
+        }
+        db
+        .ref('users/')
+        .push({
+            user:{
+                name: name,
+                email: email,
+                uuid: auth.currentUser.uid,
+            },
+        });
+        navigation.navigate('Home');
         })
         .catch((error) => alert(error.message));   
     };

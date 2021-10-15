@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles';
 import {View, Image, Text,TouchableOpacity,TextInput,KeyboardAvoidingView} from 'react-native';
 import routes from '../../navigation/routes';
-import { auth } from '../../firebase';
+import { auth } from '../../config';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
@@ -22,7 +22,14 @@ function Login({navigation}) {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
-    const signIn = () => {};
+    const signIn = () => {
+        auth
+        .signInWithEmailAndPassword(email,password)
+        .then((res)=> {
+            navigation.navigate('Home');
+        })
+        .catch((error) => alert(error.message));   
+    };
     return  (
         <KeyboardAvoidingView behavior='padding' style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 

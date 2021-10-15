@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 import styles from './styles';
-
+import { auth, db } from '../../config';
 const username = 'Xiaoming'
 const gender = 'female'
 const age = 25
@@ -15,7 +15,7 @@ function Profile (props) {
             <Text style = {styles.header}>User Profile</Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.body}>
-            <Text style = {styles.box}>Name: {username} </Text>
+            <Text style = {styles.box}>Name: {} </Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.body}>
             <Text style = {styles.box}>Gender: {gender} </Text>

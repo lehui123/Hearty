@@ -18,7 +18,7 @@ export default function Home({navigation}) {
     return (
         <SafeAreaView style = {styles.background}>
             <SafeAreaView style = {styles.header}>
-            <Text style = {styles.header}>Hi User,</Text>
+            <Text style = {styles.header}>Hi {auth?.currentUser?.displayName},</Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.body}>
             <Text style = {styles.box}>Last BPM reading</Text>

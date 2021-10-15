@@ -9,6 +9,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 function Signup({navigation}) {
     const [name,setName] = useState("");
+    const [gender,setGender]= useState("");
+    const [age, setAge] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const register = () => {
@@ -23,11 +25,14 @@ function Signup({navigation}) {
         db
         .ref('users/')
         .push({
-            user:{
+            
                 name: name,
+                gender: gender,
+                age: age,
                 email: email,
                 uuid: auth.currentUser.uid,
-            },
+
+            
         });
         navigation.navigate('HomeNavi');
         })
@@ -38,36 +43,6 @@ function Signup({navigation}) {
             <View style={styles.InnerContainer}> 
                 <Text style={styles.PageTitle}> Welcome! </Text>
                 <Text style={styles.SubTitle}> Account Signup </Text>
-                {/* <AppForm 
-                initialValues={{name: "", email: "", password: ""}}
-                onSubmit={(values) => console.log(values)}
-                validationSchema={validationSchema}
-                >
-                <AppFormField
-                autoCorrect={false}
-                icon="account"
-                name="name"
-                placeholder="Name"
-                />
-                <AppFormField
-                autoCapitalize = "none"
-                autoCorrect={false}
-                icon="email"
-                keyboardType="email-address"
-                name = 'email'
-                placeholder="Email"
-                textContextType="emailAddress"
-                />
-                
-                <AppFormField
-                autoCapitalize = "none"
-                autoCorrect={false}
-                icon="lock"
-                name = 'password'
-                placeholder="Password"
-                secureTextEntry
-                textContentType="password"
-                /> */}
                 <View style={styles.Container}>
                     
                     <MaterialCommunityIcons
@@ -83,6 +58,42 @@ function Signup({navigation}) {
                         style={styles.InputText}
                         placeholder="Full Name"
                         onChangeText = {(text) => setName(text)}
+
+                    />
+                </View>
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "gender-male-female"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        placeholder="Gender"
+                        onChangeText = {(text) => setGender(text)}
+
+                    />
+                </View>
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "calendar-month-outline"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        placeholder="Age"
+                        onChangeText = {(text) => setAge(text)}
 
                     />
                 </View>

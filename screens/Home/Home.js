@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
 import { auth } from '../../config';
 import AppButton from '../../components/AppButton';
+import styles from './styles';
 export default function Home({navigation}) { 
     const Logout = () => {
         auth
@@ -12,10 +13,28 @@ export default function Home({navigation}) {
         })
         .catch((error) => alert(error.message));  
     }
+    const lastBPMvalue = 10
+    const BPMstatus = 20
     return (
-        <View>
-            <Text>Welcome {auth?.currentUser?.displayName}</Text>
+        <SafeAreaView style = {styles.background}>
+            <SafeAreaView style = {styles.header}>
+            <Text style = {styles.header}>Hi User,</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.body}>
+            <Text style = {styles.box}>Last BPM reading</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.container}>
+            <Text style = {styles.header}> {lastBPMvalue} </Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.body}>
+            <Text style = {styles.box}>BPM status</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.container}>
+            <Text style = {styles.header}> {BPMstatus} </Text>
+            </SafeAreaView>
             <AppButton onPress={Logout} title = "Log out"/>
-        </View>
+        </SafeAreaView>
+            
+
     );
 }

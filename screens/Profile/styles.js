@@ -4,7 +4,6 @@ import Constants from "expo-constants";
 const styles = StyleSheet.create({
     styleContainer: {
         flex: 1,
-        //paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         letterSpacing: 1,
         padding: 20,
         paddingTop: Constants.statusBarHeight,

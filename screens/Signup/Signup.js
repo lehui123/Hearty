@@ -74,7 +74,7 @@ function Signup({navigation}) {
                         autoCorrect={false}
                         placeholderTextColor={Colour.tertiary}
                         style={styles.InputText}
-                        placeholder="Gender"
+                        placeholder="Male/Female"
                         onChangeText = {(text) => setGender(text)}
 
                     />

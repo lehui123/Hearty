@@ -1,10 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
+import styles from './styles';
 
-export default function InfoPage() {
+const healthInfo = 'statusOfHealth'
+function InfoPage(props) {
     return (
-        <View>
-            <Text>This is the information page</Text>
-        </View>
+        <SafeAreaView style = {styles.styleContainer}>
+            <SafeAreaView style = {styles.innerContainer}>
+            <Text style = {styles.header}>Information</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.box}>
+            <Text style = {styles.body}> {healthInfo} </Text>
+            </SafeAreaView>
+        </SafeAreaView>
     );
 }
+
+export default InfoPage;

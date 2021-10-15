@@ -1,10 +1,28 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
+import styles from './styles';
 
-export default function Home() {
+const lastBPMvalue = 10
+const BPMstatus = 20
+function Home(props) {
     return (
-        <View>
-            <Text>This is the home page</Text>
-        </View>
+        <SafeAreaView style = {styles.background}>
+            <SafeAreaView style = {styles.header}>
+            <Text style = {styles.header}>Hi User,</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.body}>
+            <Text style = {styles.box}>Last BPM reading</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.container}>
+            <Text style = {styles.header}> {lastBPMvalue} </Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.body}>
+            <Text style = {styles.box}>BPM status</Text>
+            </SafeAreaView>
+            <SafeAreaView style = {styles.container}>
+            <Text style = {styles.header}> {BPMstatus} </Text>
+            </SafeAreaView>
+        </SafeAreaView>
     );
 }
+export default Home;

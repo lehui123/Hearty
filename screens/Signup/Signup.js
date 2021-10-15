@@ -1,23 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './styles';
-import * as Yup from 'yup';
-import {View,TouchableOpacity, Text} from 'react-native';
+import {View,TouchableOpacity, Text,KeyboardAvoidingView, TextInput} from 'react-native';
+import routes from '../../navigation/routes';
+import { auth, db } from '../../config';
+import Colour from '../../components/Colour';
+import AppButton from '../../components/AppButton';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
-
-const validationSchema = Yup.object().shape({
-    name: Yup.string().required().label("Name"),
-    email: Yup.string().required().email().label("Email"),
-    password: Yup.string().required().min(4).label("Password")
-})
-
-function Signup(props) {
+function Signup({navigation}) {
+    const [name,setName] = useState("");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+    const register = () => {
+        auth
+        .createUserWithEmailAndPassword(email,password)
+        .then((res) => {
+        if (res.user) {
+            res.user.updateProfile({
+                displayName: name
+            })
+        }
+        db
+        .ref('users/')
+        .push({
+            user:{
+                name: name,
+                email: email,
+                uuid: auth.currentUser.uid,
+            },
+        });
+        navigation.navigate('Home');
+        })
+        .catch((error) => alert(error.message));   
+    };
     return (
-        <View style={styles.StyledContainer}>
+        <KeyboardAvoidingView behavior='padding' style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 
                 <Text style={styles.PageTitle}> Welcome! </Text>
                 <Text style={styles.SubTitle}> Account Signup </Text>
-                <AppForm 
+                {/* <AppForm 
                 initialValues={{name: "", email: "", password: ""}}
                 onSubmit={(values) => console.log(values)}
                 validationSchema={validationSchema}
@@ -46,19 +67,73 @@ function Signup(props) {
                 placeholder="Password"
                 secureTextEntry
                 textContentType="password"
-                />
-            
-                <SubmitButton title="Register"/>
+                /> */}
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "account"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        placeholder="Full Name"
+                        onChangeText = {(text) => setName(text)}
+
+                    />
+                </View>
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "email"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        keyboardType="email-address"
+                        placeholder="Email"
+                        textContextType="emailAddress"
+                        onChangeText = {(text) => setEmail(text)}
+                    />
+                </View>
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "lock"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        placeholder="Password"
+                        secureTextEntry
+                        textContentType="password"
+                        onChangeText = {(text) => setPassword(text)}
+                    />
+                </View>
+                <AppButton title="Register" onPress ={register}/>
 
                 <View style={styles.ExtraView}>
                     <Text style={styles.ExtraText}>Already registered an account?</Text>
-                    <TouchableOpacity style={styles.TextLink}>
+                    <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate(routes.LOGIN)}>
                         <Text style={styles.TextLinkContent}> Login</Text>
                     </TouchableOpacity>
                 </View>
-                </AppForm>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 

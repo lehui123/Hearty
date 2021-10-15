@@ -1,60 +1,90 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles';
-import * as Yup from 'yup';
-import {View,Image, Text,TouchableOpacity} from 'react-native';
+import {View, Image, Text,TouchableOpacity,TextInput,KeyboardAvoidingView} from 'react-native';
+import routes from '../../navigation/routes';
+import { auth } from '../../config';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Colour from '../../components/Colour';
+import AppButton from '../../components/AppButton';
 
-import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+function Login({navigation}) {
+    useEffect(() => { 
+        const unsubscribe = auth.onAuthStateChanged((authUser) => {
+            console.log(authUser);
+            if(authUser) {
+                navigation.replace('Home');  
+            } 
+        });
 
-const validationSchema = Yup.object().shape({
-    email: Yup.string().required().email().label("Email"),
-    password: Yup.string().required().min(4).label("Password")
-})
+        return unsubscribe;
+    }, []);
 
-function Login(props) {
-    return (
-        <View style={styles.StyledContainer}>
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const signIn = () => {
+        auth
+        .signInWithEmailAndPassword(email,password)
+        .then((res)=> {
+            navigation.navigate('Home');
+        })
+        .catch((error) => alert(error.message));   
+    };
+    return  (
+        <KeyboardAvoidingView behavior='padding' style={styles.StyledContainer}>
             <View style={styles.InnerContainer}> 
                 <Image style={styles.PageLogo} source = {require('../../assets/icon.png')}/> 
                 <Text style={styles.PageTitle}> Welcome to HEARTY </Text>
-                <Text style={styles.SubTitle}> Account Login </Text>
-                <AppForm 
-                initialValues={{email: "", password: ""}}
-                onSubmit={(values) => console.log(values)}
-                validationSchema={validationSchema}
-                >
+                <Text style={styles.SubTitle}> Account Login </Text>   
 
-                    <AppFormField
-                    autoCapitalize = "none"
-                    autoCorrect={false}
-                    icon="email"
-                    keyboardType="email-address"
-                    name = 'email'
-                    placeholder="Email"
-                    textContextType="emailAddress"
-                    />
+                <View style={styles.Container}>
                     
-                    <AppFormField
-                    autoCapitalize = "none"
-                    autoCorrect={false}
-                    icon="lock"
-                    name = 'password'
-                    placeholder="Password"
-                    secureTextEntry
-                    textContentType="password"
+                    <MaterialCommunityIcons
+                        name= "email"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
                     />
-                
-                    <SubmitButton title="Login"/>
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        keyboardType="email-address"
+                        placeholder="Email"
+                        textContextType="emailAddress"
+                        onChangeText = {(text) => setEmail(text)}
+                    />
+                </View>
+                <View style={styles.Container}>
+                    
+                    <MaterialCommunityIcons
+                        name= "lock"
+                        size = {20}
+                        color = {Colour.brand} 
+                        style = {styles.Icon}
+                    />
+                    <TextInput
+                        autoCapitalize = "none"
+                        autoCorrect={false}
+                        placeholderTextColor={Colour.tertiary}
+                        style={styles.InputText}
+                        placeholder="Password"
+                        secureTextEntry
+                        textContentType="password"
+                        onChangeText = {(text) => setPassword(text)}
+                    />
+                </View>
+                <AppButton onPress={signIn} title = "Login"/>
 
-                    <View style={styles.ExtraView}>
-                        <Text style={styles.ExtraText}>Don't have an account?</Text>
-                        <TouchableOpacity style={styles.TextLink}>
-                            <Text style={styles.TextLinkContent}> Signup</Text>
-                        </TouchableOpacity>
-                    </View>
-                </AppForm>
+                <View style={styles.ExtraView}>
+                    <Text style={styles.ExtraText}>Don't have an account?</Text>
+                    <TouchableOpacity style={styles.TextLink} onPress = {() =>navigation.navigate(routes.SIGNUP)}>
+                        <Text style={styles.TextLinkContent}> Signup</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
-}
-
+};
 export default Login;

@@ -26,7 +26,7 @@ function Login({navigation}) {
         auth
         .signInWithEmailAndPassword(email,password)
         .then((res)=> {
-            navigation.navigate('Home');
+            navigation.navigate('HomeNavigator');
         })
         .catch((error) => alert(error.message));   
     };

@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         color: Colour.tertiary,
         fontSize: 18
     },
+ 
     
 })
 export default styles

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         Color: Colour.tertiary
     },  
-    disconnectButton:{
+    styleButton:{
         marginTop: 20,
         backgroundColor: Colour.tertiary,
         height: 60,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    disconnectText:{
+    styleButtonText:{
         color: Colour.primary,
         fontSize: 18,
         textTransform: "uppercase",

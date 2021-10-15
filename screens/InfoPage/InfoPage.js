@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, Linking,Button} from 'react-native';
+import {SafeAreaView, Text, Linking,Button, SectionList, ScrollView} from 'react-native';
 import styles from './styles';
 
 const healthInfo = 'statusOfHealth'
@@ -9,10 +9,14 @@ export default function InfoPage(props) {
             <SafeAreaView style = {styles.innerContainer}>
             <Text style = {styles.header}>Information</Text>
             </SafeAreaView>
-            <SafeAreaView style = {styles.box}>
-            <Text style = {styles.body}> {healthInfo} </Text>
+            {/* <SafeAreaView style = {styles.box}>
+            <Text style = {styles.body}> Information about Heart Rate </Text>
             <Button title= "Heart Rate Information" onPress= {() => Linking.openURL('https://medicalnewstoday.com/articles/235710')}/>
-            </SafeAreaView>
+            <Text style = {styles.body}> Local Hospi </Text>
+            </SafeAreaView> */}
+            <SectionList>
+
+            </SectionList>
         </SafeAreaView>
     );
 }

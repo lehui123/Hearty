@@ -10,10 +10,10 @@ export default function Measure ({navigation}) {
             <Text style = {styles.header}>Status: Connected </Text> 
             </View>
             <TouchableOpacity
-                style={styles.disconnectButton}
+                style={styles.styleButton}
                 onPress={() => console.log('Button tapped')}
                 >
-                <Text style={styles.disconnectText}>Disconnect</Text>
+                <Text style={styles.styleButtonText}>Disconnect</Text>
             </TouchableOpacity>
             <View style = {styles.innerContainer}>
             <Text style = {styles.body}>BPM</Text>
@@ -22,10 +22,10 @@ export default function Measure ({navigation}) {
             <Text style = {styles.boxHeader}> {realtimeBPMvalue} </Text>
             </View>
             <TouchableOpacity
-                style={styles.disconnectButton}
+                style={styles.styleButton}
                 onPress={() => console.log('Button tapped')}
                 >
-                <Text style={styles.disconnectText}>Start</Text>
+                <Text style={styles.styleButtonText}>Start</Text>
             </TouchableOpacity>
         </SafeAreaView>
                 

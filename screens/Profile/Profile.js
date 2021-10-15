@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import { auth, db } from '../../config';
 import AppButton from '../../components/AppButton';
@@ -21,23 +21,27 @@ function Profile ({navigation}) {
         <SafeAreaView style = {styles.styleContainer}>
             <SafeAreaView style = {styles.innerContainer}>
             <Text style = {styles.header}>User Profile</Text>
+            <Text style = {styles.box}><b>Name:</b> {} </Text>
+            <Text style = {styles.box}><b>Gender:</b> {gender} </Text>
+            <Text style = {styles.box}><b>Age:</b> {age} </Text>
+            <Text style = {styles.box}><b>Last BPM:</b> {lastbpm} </Text>
             </SafeAreaView>
-            <SafeAreaView style = {styles.body}>
-            <Text style = {styles.box}>Name: {} </Text>
+            <SafeAreaView style = {styles.buttonContainer}>
+            <TouchableOpacity
+            style={styles.styleButton}
+            onPress={() =>{navigation.navigate('History')}}
+            >
+            <Text style={styles.styleButtonText}>History</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            style={styles.styleButton}
+            onPress={Logout}
+            >
+            <Text style={styles.styleButtonText}>Log out</Text>
+            </TouchableOpacity>
             </SafeAreaView>
-            <SafeAreaView style = {styles.body}>
-            <Text style = {styles.box}>Gender: {gender} </Text>
-            </SafeAreaView>
-            <SafeAreaView style = {styles.body}>
-            <Text style = {styles.box}>Age: {age} </Text>
-            </SafeAreaView>
-            <SafeAreaView style = {styles.body}>
-            <Text style = {styles.box}>Last BPM: {lastbpm} </Text>
-            </SafeAreaView>
-            <AppButton onPress={() => {navigation.navigate('History')}} title = "History"/>
-            <AppButton onPress={Logout} title = "Log out"/>
         </SafeAreaView>
-
+       
     );
 }
 

@@ -6,6 +6,7 @@ import { auth, db } from '../../config';
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import LoginNavigator from '../../navigation/LoginNavigator';
 
 function Signup({navigation}) {
     const [name,setName] = useState("");
@@ -23,8 +24,8 @@ function Signup({navigation}) {
             })
         }
         db
-        .ref('users/')
-        .push({
+        .ref('users/'+ auth.currentUser.uid)
+        .set({
             
                 name: name,
                 gender: gender,
@@ -34,7 +35,7 @@ function Signup({navigation}) {
 
             
         });
-        navigation.navigate('HomeNavi');
+        navigation.navigate('LoginNavi');
         })
         .catch((error) => alert(error.message));   
     };

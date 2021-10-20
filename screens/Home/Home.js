@@ -1,16 +1,26 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, {useState} from 'react';
+import React, {useEffect,useState, setState} from 'react';
 import {SafeAreaView, Text,View} from 'react-native';
-import { auth } from '../../config';
+import { auth,db } from '../../config';
 import AppButton from '../../components/AppButton';
 import styles from './styles';
-export default function Home(props) { 
+import Signup from '../Signup/Signup';
+import {onValue} from "firebase/database";
 
+
+export default function Home(props) { 
+    const [user,setUser] = useState()
+    db
+    .ref('/users/'+auth.currentUser.uid+'/name')
+    .once('value')
+    .then(snapshot => {
+       setUser(snapshot.val())
+    });
     const lastBPMvalue = 10
     const BPMstatus = 20
     return (
         <SafeAreaView style = {styles.background}>
-            <Text style = {styles.header}>Hi {auth?.currentUser?.displayName},</Text>
+            <Text style = {styles.header}>Hi, {user}</Text>
             <Text style = {styles.box}>Last BPM reading</Text>
             <View style = {styles.container}>
             <Text style = {styles.boxheader}> {lastBPMvalue} </Text>

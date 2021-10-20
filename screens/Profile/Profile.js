@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import { auth, db } from '../../config';
@@ -17,13 +17,23 @@ function Profile ({navigation}) {
         })
         .catch((error) => alert(error.message));  
     }
+    const[info,setInfo]= useState([])
+    if (auth.currentUser){
+    db
+    .ref('/users/'+auth.currentUser.uid)
+    .once('value')
+    .then(snapshot => {
+       setInfo(snapshot.val())
+    })};
+
+    
     return (
         <SafeAreaView style = {styles.styleContainer}>
             <SafeAreaView style = {styles.innerContainer}>
             <Text style = {styles.header}>User Profile</Text>
-            <Text style = {styles.box}><b>Name:</b> {} </Text>
-            <Text style = {styles.box}><b>Gender:</b> {gender} </Text>
-            <Text style = {styles.box}><b>Age:</b> {age} </Text>
+            <Text style = {styles.box}><b>Name:</b> {info?(info.name): ('')} </Text>
+            <Text style = {styles.box}><b>Gender:</b> {info?(info.gender): ('')} </Text>
+            <Text style = {styles.box}><b>Age:</b> {info?(info.age): ('')} </Text>
             <Text style = {styles.box}><b>Last BPM:</b> {lastbpm} </Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.buttonContainer}>

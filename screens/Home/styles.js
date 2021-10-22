@@ -3,6 +3,8 @@
 import { StyleSheet, StatusBar, Platform } from 'react-native'
 import Colour from '../../components/Colour'
 import Constants from "expo-constants";
+import { Dimensions } from 'react-native';
+
 const styles = StyleSheet.create({
     background: {
         flex: 1,
@@ -37,9 +39,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        //padding: 15,
-        height: '20%',
-        width: '25%',
+        width:Dimensions.get("window").width * 0.35,
+        height:Dimensions.get("window").height * 0.20,
         marginBottom: 20,
         backgroundColor: Colour.secondary
     },

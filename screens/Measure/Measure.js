@@ -1,7 +1,8 @@
 import React from 'react';
-import {SafeAreaView, Text,TouchableOpacity,View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import Colour from '../../components/Colour';
 import styles from './styles';
+
 const realtimeBPMvalue = 180
 export default function Measure ({navigation}) {
     return (
@@ -9,12 +10,12 @@ export default function Measure ({navigation}) {
             <View style = {styles.innerContainer}>
             <Text style = {styles.header}>Status: Connected </Text> 
             </View>
-            <TouchableOpacity
+            {/* <TouchableOpacity
                 style={styles.styleButton}
                 onPress={() => console.log('Button tapped')}
                 >
                 <Text style={styles.styleButtonText}>Disconnect</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <View style = {styles.innerContainer}>
             <Text style = {styles.body}>BPM</Text>
             </View>

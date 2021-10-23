@@ -5,13 +5,15 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import LoginNavigator from "./LoginNavigator";
 import ProfileNavigator from "./ProfileNavigator";
+import InfoPageNavigator from "./InfoPageNavigator";
 import Measure from "../screens/Measure/Measure";
 import Welcome from "../screens/Welcome/Welcome";
 import Profile from "../screens/Profile/Profile";
 import InfoPage from "../screens/InfoPage/InfoPage";
 import InfoPageNavigator from "./InfoPageNavigator";
 import Colour from "../components/Colour";
-import Home from "../screens/Home/Home"
+import Home from "../screens/Home/Home";
+
 
 const Tab = createBottomTabNavigator();
 

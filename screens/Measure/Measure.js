@@ -1,8 +1,11 @@
+
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, Text,TouchableOpacity,View} from 'react-native';
+
 import Colour from '../../components/Colour';
 import { auth, db } from '../../config';
 import styles from './styles';
+
 const realtimeBPMvalue = 180
 import { useInterval } from '../../utils';
 export default function Measure ({navigation}) {

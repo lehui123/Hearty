@@ -4,4 +4,6 @@ export default Object.freeze({
     PROFILE: "Profile",
     MEASURE: "Measure",
     INFOPAGE: "InfoPage",
+    HISTORY: "History",
+    HOSPITALS: "Hospitals",
   });

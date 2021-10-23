@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
     innerContainer: {
         width:Dimensions.get("window").width * 1,
-        alignItems: 'center',
+        //alignItems: 'center',
     },
     header: {
         fontSize: 40,
@@ -32,11 +32,18 @@ const styles = StyleSheet.create({
         padding: HEIGHT/80,
         justifyContent: 'center',
         alignItems: 'center',
-    },  
+    }, 
+    body2: {
+        fontSize: 20,
+        textAlign: 'left',
+        paddingLeft: WIDTH/4,
+        justifyContent: 'center',
+        alignItems: 'center', 
+    },
     box: {
         width:Dimensions.get("window").width * 0.9,
-        justifyContent: 'center',
-        alignItems: 'center',
+        //justifyContent: 'center',
+        //alignItems: 'center',
         backgroundColor: Colour.secondary
     },
     styleButton: {

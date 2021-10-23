@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import InfoPage from "../screens/InfoPage/InfoPage";
-import Hospitals from "../screens/Hospitals/Hospitals";
+import Hospital from "../screens/Hospitals/Hospital";
 const Stack = createNativeStackNavigator();
 const InfoPageNavigator = () => (
 
@@ -10,7 +10,7 @@ const InfoPageNavigator = () => (
       headerShown: false,
     }}>
     <Stack.Screen name='InfoPage' component = {InfoPage}/>
-    <Stack.Screen name='Hospitals' component = {Hospitals}/>
+    <Stack.Screen name='Hospital' component = {Hospital}/> 
   </Stack.Navigator>
 
 );

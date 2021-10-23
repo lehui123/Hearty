@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 40,
         textAlign: 'left',
-        padding: HEIGHT/30,
+        padding: HEIGHT/40,
         fontWeight: 'bold',
         color: Colour.brand
     },    
     body: {
-        padding: HEIGHT/20,
+        padding: HEIGHT/30,
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
     },  

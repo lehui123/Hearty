@@ -33,8 +33,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         letterSpacing: 1,
         fontWeight: 'bold',
+        justifyContent: 'center',
+        alignItems: 'center',
         color: Colour.brand,
-        marginTop: HEIGHT/7,
+        //marginTop: HEIGHT/10,
     },
     body: {
         fontSize: 40,
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
         padding: HEIGHT/30,
         justifyContent: 'center',
         alignItems: 'center',
-        Color: Colour.tertiary
+        color: Colour.tertiary
     },  
     styleButton:{
         marginTop: HEIGHT/25,
@@ -61,11 +63,11 @@ const styles = StyleSheet.create({
 
     },
     circle: {
-        width:Dimensions.get("window").width * 0.35,
+        width:Dimensions.get("window").width * 0.40,
         height:Dimensions.get("window").height * 0.40,
-        borderRadius:160,
+        borderRadius:Dimensions.get("window").width * 0.20,
         justifyContent: 'center',
-        backgroundColor: Colour.secondary
+        backgroundColor: Colour.secondary,
     }  
 
 });

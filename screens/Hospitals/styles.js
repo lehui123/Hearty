@@ -17,19 +17,29 @@ const styles = StyleSheet.create({
         width:Dimensions.get("window").width * 1,
         alignItems: 'center',
     },
+    mainHeader: {
+        fontSize: 30,
+        fontWeight: "bold",
+        textAlign: 'center',
+        padding: HEIGHT/35,
+        color: Colour.tertiary,
+    },
     header: {
         fontSize: 20,
         textAlign: 'center',
         flexDirection: 'row',
-        padding: HEIGHT/95,
-        marginHorizontal: 10,
+        padding: HEIGHT/70,
+        paddingTop: HEIGHT/70,
+        //marginHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        textTransform: "uppercase",
+        //fontWeight: "bold",
     },
     styleButton: {
         marginTop: HEIGHT/25,
-        backgroundColor: Colour.tertiary,
-        width:Dimensions.get("window").width * 0.60,
+        backgroundColor:Colour.brand,
+        width:Dimensions.get("window").width * 0.55,
         height:Dimensions.get("window").height * 0.10,
         borderRadius: 40,
         justifyContent: 'center',
@@ -39,11 +49,23 @@ const styles = StyleSheet.create({
         color: Colour.primary,
         fontSize: 18,
         textTransform: "uppercase",
+        
+    },
+    styleButton2:{
+        marginTop: HEIGHT/30,
+        backgroundColor: Colour.tertiary,
+        width:Dimensions.get("window").width * 0.25,
+        height:Dimensions.get("window").height * 0.10,
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    styleButtonText2:{
+        color: Colour.primary,
+        fontSize: 18,
+        textTransform: "uppercase",
         fontWeight: "bold",
-
     }
-
-
 
 });
 

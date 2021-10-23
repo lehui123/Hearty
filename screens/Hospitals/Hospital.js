@@ -1,13 +1,16 @@
 import React from 'react';
-import {SafeAreaView, Text, TouchableOpacity, ScrollView} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, Linking, ScrollView} from 'react-native';
 import AppButton from '../../components/AppButton';
+import styles from './styles';
 
-export default function Hospitals({navigation}) {
-     return (
+export default function Hospital({navigation}) {
+    return (
+        <ScrollView>
         <SafeAreaView style = {styles.styleContainer}>
             <SafeAreaView style = {styles.innerContainer}>
-            <Text>Cardiac Hospitals in Singapore</Text>
+            <Text style = {styles.mainHeader}>Cardiac Hospitals in Singapore</Text>
             <Text style = {styles.header}> Central </Text>
+            </SafeAreaView>
             <TouchableOpacity
             style={styles.styleButton}
             onPress={() => Linking.openURL('https://www.ah.com.sg/Pages/Make--Change-My-Appointment.aspx')}
@@ -37,7 +40,7 @@ export default function Hospitals({navigation}) {
             style={styles.styleButton}
             onPress={() => Linking.openURL('https://www.nuhcs.com.sg/I-Want-To/Pages/Contact-NUHCS.aspx')}
             >
-            <Text style={styles.styleButtonText}>National University Heart Centre Singapore</Text>
+            <Text style={styles.styleButtonText}>National University Heart Centre</Text>
             </TouchableOpacity>
             <TouchableOpacity
             style={styles.styleButton}
@@ -66,9 +69,17 @@ export default function Hospitals({navigation}) {
             >
             <Text style={styles.styleButtonText}>Sengkang General Hospital</Text>
             </TouchableOpacity>
-            <AppButton onPress={() =>navigation.navigate('InfoPageNavigator')} title = "Information"/>
-            </SafeAreaView>
+
+            <TouchableOpacity
+            style={styles.styleButton2}
+            onPress={() =>{navigation.navigate('InfoPage')}}
+            >
+            <Text style={styles.styleButtonText2}>Information</Text>
+            </TouchableOpacity>
+        
         </SafeAreaView>
+        </ScrollView>
+        
+        
     );
 }
-

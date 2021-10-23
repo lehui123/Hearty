@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     styleButton:{
         marginTop: HEIGHT/30,
         backgroundColor: Colour.tertiary,
-        width:Dimensions.get("window").width * 0.25,
+        width:Dimensions.get("window").width * 0.35,
         height:Dimensions.get("window").height * 0.10,
         borderRadius: 40,
         justifyContent: 'center',

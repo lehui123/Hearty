@@ -27,21 +27,21 @@ const styles = StyleSheet.create({
         color: Colour.brand
     },    
     body: {
-        fontSize: 20,
-        textAlign: 'center',
+        fontSize: 19,
+        textAlign: 'left',
         padding: HEIGHT/80,
         justifyContent: 'center',
         alignItems: 'center',
     }, 
     body2: {
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'left',
-        paddingLeft: WIDTH/4,
+        paddingLeft: WIDTH/8,
         justifyContent: 'center',
         alignItems: 'center', 
     },
     box: {
-        width:Dimensions.get("window").width * 0.9,
+        width:Dimensions.get("window").width * 0.80,
         //justifyContent: 'center',
         //alignItems: 'center',
         backgroundColor: Colour.secondary
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     styleButton: {
         marginTop: HEIGHT/25,
         backgroundColor: Colour.tertiary,
-        width:Dimensions.get("window").width * 0.55,
+        width:Dimensions.get("window").width * 0.65,
         height:Dimensions.get("window").height * 0.10,
         borderRadius: 40,
         justifyContent: 'center',

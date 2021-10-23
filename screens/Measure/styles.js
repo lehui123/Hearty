@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     styleButton:{
         marginTop: HEIGHT/25,
         backgroundColor: Colour.tertiary,
-        width:Dimensions.get("window").width * 0.25,
+        width:Dimensions.get("window").width * 0.35,
         height:Dimensions.get("window").height * 0.10,
         borderRadius: 40,
         justifyContent: 'center',
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
 
     },
     circle: {
-        width:Dimensions.get("window").width * 0.40,
-        height:Dimensions.get("window").height * 0.40,
-        borderRadius:Dimensions.get("window").width * 0.20,
+        width:Dimensions.get("window").width * 0.60,
+        height:Dimensions.get("window").width * 0.60,
+        borderRadius:Dimensions.get("window").width * 0.30,
         justifyContent: 'center',
         backgroundColor: Colour.secondary,
     }  

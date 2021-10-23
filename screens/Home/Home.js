@@ -17,7 +17,7 @@ export default function Home(props) {
        setUser(snapshot.val())
     });
     const lastBPMvalue = 10
-    const BPMstatus = 20
+    const BPMstatus = 'Abnormal'
     return (
         <SafeAreaView style = {styles.background}>
             <Text style = {styles.header}>Hi, {user}</Text>
@@ -27,7 +27,7 @@ export default function Home(props) {
             </View>
             <Text style = {styles.box}>BPM status</Text>
             <View style = {styles.container}>
-            <Text style = {styles.boxheader}> {BPMstatus} </Text>
+            <Text style = {styles.boxheader2}> {BPMstatus} </Text>
             </View>
 
         </SafeAreaView>

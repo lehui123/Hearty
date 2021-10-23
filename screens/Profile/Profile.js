@@ -6,7 +6,7 @@ import AppButton from '../../components/AppButton';
 const username = 'Xiaoming'
 const gender = 'female'
 const age = 25
-const lastbpm = 139
+const lastbpm = '139'
 const bpmHistory = 'Day1: 130'
 function Profile ({navigation}) {
     const Logout = () => {
@@ -31,10 +31,11 @@ function Profile ({navigation}) {
         <SafeAreaView style = {styles.styleContainer}>
             <SafeAreaView style = {styles.innerContainer}>
             <Text style = {styles.header}>User Profile</Text>
-            <Text style = {styles.box}><b>Name:</b> {info?(info.name): ('')} </Text>
-            <Text style = {styles.box}><b>Gender:</b> {info?(info.gender): ('')} </Text>
-            <Text style = {styles.box}><b>Age:</b> {info?(info.age): ('')} </Text>
-            <Text style = {styles.box}><b>Last BPM:</b> {lastbpm} </Text>
+            <Text style = {styles.box}>Name: {info? info.name: ''} </Text>
+            <Text style = {styles.box}>Gender: {info?info.gender: ''} </Text>
+            <Text style = {styles.box}>Age: {info?info.age: ''} </Text>
+            <Text style = {styles.box}>Email: {info?info.email: ''} </Text>
+            <Text style = {styles.box}>Last BPM: </Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.buttonContainer}>
             <TouchableOpacity

@@ -32,9 +32,15 @@ function Signup({navigation}) {
                 age: age,
                 email: email,
                 uuid: auth.currentUser.uid,
-
-            
-        });
+        
+            });
+        db
+        .ref('/instruct')
+        .set({
+            toggle: 'off',
+            uid: auth.currentUser.uid,
+            })
+    
         navigation.navigate('LoginNavi');
         })
         .catch((error) => alert(error.message));   

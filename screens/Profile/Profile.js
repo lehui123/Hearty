@@ -13,7 +13,7 @@ function Profile ({navigation}) {
         auth
         .signOut()
         .then(()=>{
-        navigation.navigate('LoginNavi');
+        navigation.navigate('Login');
         })
         .catch((error) => alert(error.message));  
     }
@@ -35,7 +35,7 @@ function Profile ({navigation}) {
             <Text style = {styles.box}>Gender: {info?info.gender: ''} </Text>
             <Text style = {styles.box}>Age: {info?info.age: ''} </Text>
             <Text style = {styles.box}>Email: {info?info.email: ''} </Text>
-            <Text style = {styles.box}>Last BPM: </Text>
+            <Text style = {styles.box}>Last BPM: {info?info.BPM_Value: ''} </Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.buttonContainer}>
             <TouchableOpacity

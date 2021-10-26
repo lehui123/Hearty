@@ -41,7 +41,7 @@ function Signup({navigation}) {
             uid: auth.currentUser.uid,
             })
     
-        navigation.navigate('LoginNavi');
+        navigation.navigate('HomeNavi');
         })
         .catch((error) => alert(error.message));   
     };

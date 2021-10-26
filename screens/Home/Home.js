@@ -10,22 +10,33 @@ import {onValue} from "firebase/database";
 
 export default function Home(props) { 
     const [user,setUser] = useState()
+    const [lastBPM, setLast] = useState()
+    useEffect(() => { 
+        db
+        .ref('/users/'+auth.currentUser.uid+'/BPM_Value')
+        .once('value')
+        .then(snapshot => {
+           setLast(snapshot.val())
+        })
+    }, []);
     db
     .ref('/users/'+auth.currentUser.uid+'/name')
     .once('value')
     .then(snapshot => {
        setUser(snapshot.val())
     });
-    const lastBPMvalue = 10
-    const BPMstatus = 'Abnormal'
+    var BPMstatus = 'Normal'
+    if (lastBPM > 100 || lastBPM < 60){
+        BPMstatus = 'Abnormal'
+    }
     return (
         <SafeAreaView style = {styles.background}>
             <Text style = {styles.header}>Hi, {user}</Text>
             <Text style = {styles.box}>Last BPM reading</Text>
             <View style = {styles.container}>
-            <Text style = {styles.boxheader}> {lastBPMvalue} </Text>
+            <Text style = {styles.boxheader}> {lastBPM} </Text>
             </View>
-            <Text style = {styles.box}>BPM status</Text>
+            <Text style = {styles.box}>Resting BPM status</Text>
             <View style = {styles.container}>
             <Text style = {styles.boxheader2}> {BPMstatus} </Text>
             </View>

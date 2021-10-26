@@ -10,7 +10,7 @@ import AppButton from '../../components/AppButton';
 function Login({navigation}) {
     useEffect(() => { 
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
-            console.log(authUser);
+            // console.log(authUser);
             if(authUser) {
                 navigation.replace('HomeNavi');  
             } 

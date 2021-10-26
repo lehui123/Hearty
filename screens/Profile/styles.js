@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 40,
         textAlign: 'left',
+
         paddingTop: HEIGHT/15,
         padding: 20,
         fontWeight: 'bold',
@@ -117,6 +118,7 @@ const styles = StyleSheet.create({
     },
     styleButton:{
         marginTop: HEIGHT/20,
+
         backgroundColor: Colour.tertiary,
         width:Dimensions.get("window").width * 0.35,
         height:Dimensions.get("window").height * 0.10,

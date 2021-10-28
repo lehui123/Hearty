@@ -18,13 +18,14 @@ export default function Home(props) {
         .then(snapshot => {
            setLast(snapshot.val())
         })
+        db
+        .ref('/users/'+auth.currentUser.uid+'/name')
+        .once('value')
+        .then(snapshot => {
+           setUser(snapshot.val())
+        });
     }, []);
-    db
-    .ref('/users/'+auth.currentUser.uid+'/name')
-    .once('value')
-    .then(snapshot => {
-       setUser(snapshot.val())
-    });
+
     var BPMstatus = 'Normal'
     if (lastBPM > 100 || lastBPM < 60){
         BPMstatus = 'Abnormal'
@@ -44,5 +45,5 @@ export default function Home(props) {
         </SafeAreaView>
             
 
-    );
-}
+    )
+};

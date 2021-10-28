@@ -7,7 +7,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ProfileNavigator from "./ProfileNavigator";
 import InfoPageNavigator from "./InfoPageNavigator";
 import Measure from "../screens/Measure/Measure";
-import InfoPageNavigator from "./InfoPageNavigator";
 import Colour from "../components/Colour";
 import Home from "../screens/Home/Home";
 

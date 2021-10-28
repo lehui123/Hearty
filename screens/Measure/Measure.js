@@ -37,7 +37,7 @@ export default function Measure ({navigation}) {
         .child(times)
         .set({
             BPM
-        })
+        },1000)
     }
 
     })

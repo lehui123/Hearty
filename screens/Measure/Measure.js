@@ -40,7 +40,7 @@ export default function Measure ({navigation}) {
         })
     }
 
-    })
+    });
     
     const startmeasure = () => {
         db
@@ -65,7 +65,11 @@ export default function Measure ({navigation}) {
             toggle: 'off',
             uid: auth.currentUser.uid,
           })
- 
+        db
+        .ref('/users/'+auth.currentUser.uid+'/last_BPM')
+        .set({
+             BPM:{BPM}
+        })
         setMeasure(false)
     }
 

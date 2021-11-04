@@ -26,13 +26,14 @@ function Signup({navigation}) {
         db
         .ref('users/'+ auth.currentUser.uid)
         .set({
-            
+                BPM_Value: '-',
                 name: name,
                 gender: gender,
                 age: age,
                 email: email,
                 uuid: auth.currentUser.uid,
-        
+                last_BPM: '-',
+                records:'-',
             });
         db
         .ref('/instruct')

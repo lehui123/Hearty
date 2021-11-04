@@ -6,18 +6,25 @@ import AppButton from '../../components/AppButton';
 import styles from './styles';
 import Signup from '../Signup/Signup';
 import {onValue} from "firebase/database";
-
+import { useInterval } from '../../utils';
 
 export default function Home(props) { 
     const [user,setUser] = useState()
     const [lastBPM, setLast] = useState()
-    useEffect(() => { 
+    useInterval(()=>{
+             
         db
-        .ref('/users/'+auth.currentUser.uid+'/BPM_Value')
+        .ref('/users/'+auth.currentUser.uid+'/last_BPM/BPM/BPM')
         .once('value')
         .then(snapshot => {
-           setLast(snapshot.val())
+            setLast(snapshot.val())
+
         })
+
+    
+
+    })
+    useEffect(() => { 
         db
         .ref('/users/'+auth.currentUser.uid+'/name')
         .once('value')

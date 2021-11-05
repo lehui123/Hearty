@@ -2,12 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import { auth, db } from '../../config';
-import AppButton from '../../components/AppButton';
-const username = 'Xiaoming'
-const gender = 'female'
-const age = 25
-const lastbpm = '139'
-const bpmHistory = 'Day1: 130'
+import routes from '../../navigation/routes';
 function Profile ({navigation}) {
     const Logout = () => {
         auth
@@ -40,7 +35,7 @@ function Profile ({navigation}) {
             <SafeAreaView style = {styles.buttonContainer}>
             <TouchableOpacity
             style={styles.styleButton}
-            onPress={() =>{navigation.navigate('History')}}
+            onPress={() =>{navigation.navigate(routes.HISTORY)}}
             >
             <Text style={styles.styleButtonText}>History</Text>
             </TouchableOpacity>

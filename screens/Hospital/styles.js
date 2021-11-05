@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colour.primary
     },
     innerContainer: {
-        width:Dimensions.get("window").width * 1,
+        width:WIDTH * 1,
         alignItems: 'center',
     },
     mainHeader: {
@@ -36,9 +36,8 @@ const styles = StyleSheet.create({
     styleButton: {
         marginTop: HEIGHT/25,
         backgroundColor:Colour.brand,
-        width:Dimensions.get("window").width * 0.75,
-        height:Dimensions.get("window").height * 0.08,
-        //borderRadius: WIDTH * 0.20,
+        width:WIDTH * 0.75,
+        height:HEIGHT * 0.08,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -52,8 +51,8 @@ const styles = StyleSheet.create({
     styleButton2:{
         marginTop: HEIGHT/30,
         backgroundColor: Colour.tertiary,
-        width:Dimensions.get("window").width * 0.55,
-        height:Dimensions.get("window").height * 0.10,
+        width:WIDTH * 0.55,
+        height:HEIGHT * 0.10,
         borderRadius: 40,
         justifyContent: 'center',
         alignItems: 'center',

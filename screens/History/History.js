@@ -1,12 +1,10 @@
 import React, {useState,useEffect} from 'react';
-import {View, TouchableOpacity,Text,FlatList,StyleSheet, SectionList} from 'react-native';
-import AppButton from '../../components/AppButton';
-
+import {View, TouchableOpacity,Text, SectionList} from 'react-native';
 import { auth, db } from '../../config';
 import styles from '../History/styles';
+import routes from '../../navigation/routes';
 
 export default function History({navigation}) {
-    //const [hist,setHist] = useState([])
     const [History, setHistory] = useState([])
     
     useEffect(() => {
@@ -14,7 +12,6 @@ export default function History({navigation}) {
     .ref('/users/'+auth.currentUser.uid+'/records')
     .once('value')
     .then(snapshot => {
-        // setHist(snapshot.val())
         let history = [];
     
         for (const [key, value] of Object.entries(snapshot.val())) { 
@@ -45,17 +42,6 @@ export default function History({navigation}) {
 
 
     return (
-        // <div> 
-        //     {history.map(obj => (
-        //         obj['records'].map((record,idx)=>
-        //         <div>
-        //             {idx === 0 ? obj['date']:""}
-        //             <li>
-        //                 {"time: "+ record['time'] + "--->" + "BPM: " + record['BPM']}
-        //             </li>
-        //         </div>  )
-        //     ))}
-        // </div>
         <View style = {styles.container}>
         <Text style = {styles.titleHeader}> History </Text>
         <View style = {styles.infoContainer}>
@@ -69,7 +55,7 @@ export default function History({navigation}) {
         <View style = {{justifyContent: 'center'}}>
         <TouchableOpacity
         style={styles.styleButton}
-        onPress={() =>{navigation.navigate('Profile Page')}}
+        onPress={() =>{navigation.navigate(routes.PROFILE)}}
         >
         <Text style={styles.styleButtonText}>Profile</Text>
         </TouchableOpacity>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Text, TouchableOpacity, Linking, ScrollView} from 'react-native';
-import AppButton from '../../components/AppButton';
 import styles from './styles';
+import routes from '../../navigation/routes';
 
 export default function Hospital({navigation}) {
     return (
@@ -72,7 +72,7 @@ export default function Hospital({navigation}) {
 
             <TouchableOpacity
             style={styles.styleButton2}
-            onPress={() =>{navigation.navigate('InfoPage')}}
+            onPress={() =>{navigation.navigate(routes.INFOPAGE)}}
             >
             <Text style={styles.styleButtonText2}>Information</Text>
             </TouchableOpacity>

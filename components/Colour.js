@@ -6,7 +6,3 @@ export default{
     placeholder: "#854d27",
    
 }
- //secondary: "#feeeee", #e5f6df
- //brand: "#d33f49",
- //brand: "#8fbaab",
-//tertiary: "#2e1f27" 

@@ -1,11 +1,8 @@
-import { NavigationContainer } from '@react-navigation/native';
-import React, {useEffect,useState, setState} from 'react';
+
+import React, {useEffect,useState} from 'react';
 import {SafeAreaView, Text,View} from 'react-native';
 import { auth,db } from '../../config';
-import AppButton from '../../components/AppButton';
 import styles from './styles';
-import Signup from '../Signup/Signup';
-import {onValue} from "firebase/database";
 import { useInterval } from '../../utils';
 
 export default function Home(props) { 

@@ -6,13 +6,13 @@ import { auth } from '../../config';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
+import routes from '../../navigation/routes';
 
 function Login({navigation}) {
     useEffect(() => { 
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
-            // console.log(authUser);
             if(authUser) {
-                navigation.replace('HomeNavi');  
+                navigation.replace(routes.HOME);  
             } 
         });
 
@@ -26,7 +26,7 @@ function Login({navigation}) {
         auth
         .signInWithEmailAndPassword(email,password)
         .then((res)=> {
-            navigation.navigate('HomeNavi');
+            navigation.navigate(routes.HOME);
         })
         .catch((error) => alert(error.message));   
     };

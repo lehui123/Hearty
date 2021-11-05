@@ -1,8 +1,8 @@
 import React from 'react';
-import {SafeAreaView, Text, Linking, Button, SectionList, TouchableOpacity} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import routes from '../../navigation/routes';
 
-const healthInfo = 'statusOfHealth'
 export default function InfoPage({navigation}) {
     return (
         <SafeAreaView style = {styles.styleContainer}>
@@ -20,7 +20,7 @@ export default function InfoPage({navigation}) {
             </SafeAreaView>
             <TouchableOpacity
             style={styles.styleButton}
-            onPress={() =>{navigation.navigate('Hospital')}}
+            onPress={() =>{navigation.navigate(routes.HOSPITAL)}}
             >
             <Text style={styles.styleButtonText}>Cardiac Hospital</Text>
             </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { StyleSheet, StatusBar, Platform } from 'react-native'
+import { StyleSheet } from 'react-native'
 import Colour from '../../components/Colour'
 import Constants from "expo-constants";
 import { Dimensions } from 'react-native';
@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colour.primary
     },
     innerContainer: {
-        width:Dimensions.get("window").width * 1,
-        //alignItems: 'center',
+        width:WIDTH * 1,
     },
     header: {
         fontSize: 40,
@@ -42,9 +41,7 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
     },
     box: {
-        width:Dimensions.get("window").width * 0.80,
-        //justifyContent: 'center',
-        //alignItems: 'center',
+        width:WIDTH * 0.80,
         backgroundColor: Colour.secondary
     },
     styleButton: {

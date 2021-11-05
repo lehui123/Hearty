@@ -1,4 +1,4 @@
-import { StyleSheet, StatusBar, Platform } from 'react-native'
+import { StyleSheet } from 'react-native'
 import Colour from '../../components/Colour'
 import Constants from "expo-constants";
 import { Dimensions } from 'react-native';
@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         justifyContent: 'center',
-        //alignContent: 'center',
         alignItems: "center",
         padding: 20,
         paddingTop: Constants.statusBarHeight,
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: "center",
         padding: 20,
-        width:Dimensions.get("window").width * 0.80,
+        width:WIDTH * 0.80,
         height: HEIGHT * 0.7,
         backgroundColor: Colour.secondary,
         marginBottom: 30,
@@ -48,17 +47,12 @@ const styles = StyleSheet.create({
         color: Colour.tertiary
     },
     styleButton:{
-        // marginTop: HEIGHT/25,
         backgroundColor:Colour.tertiary,
-        // width:200,
-        // height:60,
-        // borderRadius: 20,
-        width:Dimensions.get("window").width * 0.35,
-        height:Dimensions.get("window").height * 0.10,
+        width:WIDTH * 0.35,
+        height:HEIGHT * 0.10,
         borderRadius: 40,
         justifyContent: 'center',
         alignItems: 'center',
-       // alignContent: 'center'
 
     },
     styleButtonText:{

@@ -5,5 +5,6 @@ export default Object.freeze({
     MEASURE: "Measure",
     INFOPAGE: "InfoPage",
     HISTORY: "History",
-    HOSPITALS: "Hospitals",
+    HOSPITAL: "Hospital",
+    HOME: "HomeNavi"
   });

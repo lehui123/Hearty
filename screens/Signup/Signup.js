@@ -6,7 +6,7 @@ import { auth, db } from '../../config';
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import LoginNavigator from '../../navigation/LoginNavigator';
+
 
 function Signup({navigation}) {
     const [name,setName] = useState("");
@@ -42,7 +42,7 @@ function Signup({navigation}) {
             uid: auth.currentUser.uid,
             })
     
-        navigation.navigate('HomeNavi');
+        navigation.navigate(routes.HOME);
         })
         .catch((error) => alert(error.message));   
     };

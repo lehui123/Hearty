@@ -1,17 +1,16 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, Text,TouchableOpacity,View} from 'react-native';
-
-import Colour from '../../components/Colour';
 import { auth, db } from '../../config';
 import styles from './styles';
 import { useInterval } from '../../utils';
+
 export default function Measure ({navigation}) {
     const [measure,setMeasure] = useState(false)
     const [BPM, setBPM] = useState()
     var date = new Date().getDate()
-    var month = new Date().getMonth() + 1; //To get the Current Month
-    var year = new Date().getFullYear(); //To get the Current Year
+    var month = new Date().getMonth() + 1; 
+    var year = new Date().getFullYear(); 
     var hour = new Date().getHours()
     var hours = ("0" + hour).slice(-2)
     var min = new Date().getMinutes()
@@ -20,7 +19,6 @@ export default function Measure ({navigation}) {
     var secs = ("0" + sec).slice(-2)
     var times = hours+':'+ mins+':'+secs
     var dates = date+'-'+month+'-'+year
-    // const fetchData = () =>{
 
     useInterval(()=>{
              
@@ -53,9 +51,6 @@ export default function Measure ({navigation}) {
 
 
         setMeasure(true)
-        // db
-        // .ref('/users/'+auth.currentUser.uid+'/BPM_value')
-        // .on("value", function (snapshot) {setBPM(snapshot.val)})
     }
     const stopmeasure = () => {
 
@@ -78,12 +73,6 @@ export default function Measure ({navigation}) {
             <View style = {styles.innerContainer}>
             <Text style = {styles.header}>Status: {measure? ('Connected'): ('Disconnected')} </Text> 
             </View>
-            {/* <TouchableOpacity
-                style={styles.styleButton}
-                onPress={() => console.log('Button tapped')}
-                >
-                <Text style={styles.styleButtonText}>Disconnect</Text>
-            </TouchableOpacity> */}
             <View style = {styles.innerContainer}>
             <Text style = {styles.body}>BPM</Text>
             </View>

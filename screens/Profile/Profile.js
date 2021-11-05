@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import { auth, db } from '../../config';
@@ -13,13 +13,25 @@ function Profile ({navigation}) {
         .catch((error) => alert(error.message));  
     }
     const[info,setInfo]= useState([])
-    if (auth.currentUser){
-    db
-    .ref('/users/'+auth.currentUser.uid)
-    .once('value')
-    .then(snapshot => {
-       setInfo(snapshot.val())
-    })};
+    const[last,setLast]= useState([])
+    
+    useEffect(() => {
+        if (auth.currentUser){
+        db
+        .ref('/users/'+auth.currentUser.uid)
+        .once('value')
+        .then(snapshot => {
+        setInfo(snapshot.val())
+        
+        })
+        db
+        .ref('/users/'+auth.currentUser.uid+'/last_BPM/BPM')
+        .once('value')
+        .then(snapshot => {
+            setLast(snapshot.val())
+
+        })};
+    }, []);
 
     
     return (
@@ -30,7 +42,7 @@ function Profile ({navigation}) {
             <Text style = {styles.box}>Gender: {info?info.gender: ''} </Text>
             <Text style = {styles.box}>Age: {info?info.age: ''} </Text>
             <Text style = {styles.box}>Email: {info?info.email: ''} </Text>
-            <Text style = {styles.box}>Last BPM: {info?info.BPM_Value: ''} </Text>
+            <Text style = {styles.box}>Last BPM: {last? last.BPM : ''} </Text>
             </SafeAreaView>
             <SafeAreaView style = {styles.buttonContainer}>
             <TouchableOpacity

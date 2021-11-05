@@ -6,7 +6,6 @@ import { auth } from '../../config';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Colour from '../../components/Colour';
 import AppButton from '../../components/AppButton';
-import routes from '../../navigation/routes';
 
 function Login({navigation}) {
     useEffect(() => { 

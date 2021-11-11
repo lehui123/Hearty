@@ -58,7 +58,7 @@ export default function Hospital({navigation}) {
             <Text style = {styles.header}> North </Text>
             <TouchableOpacity
             style={styles.styleButton}
-            onPress={() => Linking.openURL('https://www.cgh.com.sg/centres-services/Pages/Cardiology.aspx')}
+            onPress={() => Linking.openURL('https://www.ktph.com.sg/services/medical-specialties/cardiology')}
             >
             <Text style={styles.styleButtonText}>Khoo Teck Puat Hospital</Text>
             </TouchableOpacity>
